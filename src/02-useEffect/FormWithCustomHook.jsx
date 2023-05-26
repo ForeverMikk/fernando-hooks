@@ -4,7 +4,7 @@ import { useForm } from "../hooks/useForm";
 export const FormWithCustomHook = () => {
 
     //Como usaste el spred en el custom hook aqui puedes desestructurar el componente
-    const { onInputChange, username, email, password } = useForm({
+    const { onInputChange, username, email, password, onResetForm } = useForm({
             username: '',
             email: '',
             password: ''
@@ -41,6 +41,7 @@ export const FormWithCustomHook = () => {
             onChange={onInputChange}
         />
 
+        <button onClick={onResetForm} className="btn btn-primary mt-2">Reset</button>
     </>
   )
 }

@@ -11,11 +11,22 @@ export const useForm = (initialForm = {}) => {
             [name]: value
         });
     }
+
+    const onResetForm = () => {
+        setFormState(initialForm);
+
+        // setFormState({
+        //     username: '',
+        //     email: '',
+        //     password: ''
+        // })
+    }
     
     return {
         ...formState, //Al usar spred operator en el formState,
         // si es un objeto retorna todas las variables que contiene
         formState,
-        onInputChange
+        onInputChange,
+        onResetForm
     }
 }
