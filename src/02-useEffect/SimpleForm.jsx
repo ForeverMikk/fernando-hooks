@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Message } from "./Message";
 
 export const SimpleForm = () => {
 
@@ -21,15 +22,15 @@ export const SimpleForm = () => {
     // Se recomienda tener un efecto que haga una funcion especifica
     // Esto hace maseficiente nuestra aplicaion
     useEffect(() => {
-        console.log('useEffect');
+        // console.log('useEffect');
     }, []);
 
     useEffect(() => {
-        console.log('formState Changed!');
+        // console.log('formState Changed!');
     }, [formState]); //El arreglo de dependencias indica cuando se renderiza la aplicaion
 
     useEffect(() => {
-        console.log('email Changed!');
+        // console.log('email Changed!');
     }, [email]);
 
   return (
@@ -52,6 +53,10 @@ export const SimpleForm = () => {
             value={email}
             onChange={onInputChange}
         />
+
+        {
+            username === 'Michael' && <Message />
+        }
     </>
   )
 }
