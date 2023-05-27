@@ -14,12 +14,6 @@ export const useForm = (initialForm = {}) => {
 
     const onResetForm = () => {
         setFormState(initialForm);
-
-        // setFormState({
-        //     username: '',
-        //     email: '',
-        //     password: ''
-        // })
     }
     
     return {
