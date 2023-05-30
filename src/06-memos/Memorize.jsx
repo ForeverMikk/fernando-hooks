@@ -7,7 +7,6 @@ export const Memorize = () => {
     const {counter, increment} = useCounter();
     const [show, setShow] = useState(true);
 
-
   return (
     <>
     <h1>Counter: <Small value={counter} /></h1>
