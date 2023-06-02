@@ -10,10 +10,8 @@ export const Padre = () => {
       (num) => {
           setValor( oldValue => oldValue + num );
       },
-      [],
-    )
+      [],)
     
-
     return (
         <div>
             <h1>Padre</h1>
@@ -21,16 +19,13 @@ export const Padre = () => {
 
             <hr />
 
-            {
-                numeros.map( n => (
+            {numeros.map( n => (
                     <Hijo 
                         key={ n }
                         numero={ n }
                         incrementar={ incrementar }
                     />
-                ))
-            }
-            {/* <Hijo /> */}
+            ))}
         </div>
     )
 }
