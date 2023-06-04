@@ -1,4 +1,3 @@
-
 const initialState = [
     {
         id: 1,
@@ -24,11 +23,11 @@ const newTodo = {
         done:false
     }
 
-    const addTodoAction = {
-        type: '[TODO] add todo',
-        payload: newTodo, //lo que va dentro de la accion
-    }
+const addTodoAction = {
+    type: '[TODO] add todo',
+    payload: newTodo, //lo que va dentro de la accion
+}
 
-    todos = todoReducer(todos, addTodoAction);
+todos = todoReducer(todos, addTodoAction);
 
-    console.log({state: todos})
+console.log({state: todos});
