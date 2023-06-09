@@ -1,7 +1,7 @@
 import { TodoItem } from "./TodoItem"
 import PropTypes from 'prop-types';
 
-export const TodoList = ({todos = [], onDeleteTodo}) => {
+export const TodoList = ({todos = [], onDeleteTodo, onToggleTodo}) => {
 
 
 
@@ -13,6 +13,7 @@ export const TodoList = ({todos = [], onDeleteTodo}) => {
                   key={todo.id} 
                   todo={todo} 
                   onDeleteTodo={ id => onDeleteTodo(id) }
+                  onToggleTodo={ id => onToggleTodo(id) }
                 />
             ))
         }
@@ -22,6 +23,6 @@ export const TodoList = ({todos = [], onDeleteTodo}) => {
 
 TodoList.propTypes = {
     todos: PropTypes.array,
-    onDeleteTodo: PropTypes.func
-
+    onDeleteTodo: PropTypes.func,
+    onToggleTodo: PropTypes.func
 }
