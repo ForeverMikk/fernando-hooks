@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 export const TodoList = ({todos = [], onDeleteTodo, onToggleTodo}) => {
 
-
-
   return (
     <ul className="list-group">
         {

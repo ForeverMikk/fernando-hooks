@@ -1,67 +1,18 @@
-import { useEffect, useReducer } from "react"
-import { todoReducer } from "./totoReducer";
 import { TodoList } from "./TodoList";
 import { TodoAdd } from "./TodoAdd";
-
-const initialState = [
-    // {
-    //     id: new Date().getTime(),
-    //     description: 'Recolectar la piedra del alma',
-    //     done: false,
-    // },
-    // {
-    //     id: new Date().getTime() * 3,
-    //     description: 'Recolectar la piedra del poder',
-    //     done: false,
-    // }
-]
-
-const init = () => {
-    // Esta funcion indica que si el valor del arreglo es null, regresa un arreglo vacio
-    // Si no, regresa el valor del local Storage
-    return JSON.parse(localStorage.getItem('todos')) || []; 
-
-}
+import { useTodo } from "../hooks";
 
 export const TodoApp = () => {
 
-    const [todos, dispatch] = useReducer(todoReducer, initialState, init);
-
-    useEffect(() => {
-      localStorage.setItem('todos', JSON.stringify(todos)); //Seteas los valores del localStorage cada que cambian los todos
-    }, [todos]);
-    
-
-    const handleNewTodo = (todo) => {
-        const action = {
-            type: '[TODO] Add Todo',
-            payload: todo
-        }
-
-        dispatch(action);
-    }
-
-    const handleDeleteTodo = (id) => {
-        const action = {
-            type: '[TODO] Remove Todo',
-            payload: id
-        }
-
-        dispatch(action);
-    }
-
-    const handleToggleTodo = (id) => {
-        const action = {
-            type: '[TODO] Toggle Todo',
-            payload: id
-        }
-
-        dispatch(action)
-    }
+  const {todos, handleDeleteTodo, handleNewTodo, handleToggleTodo} = useTodo();
 
   return (
     <>
-        <h1>TODOApp: 10 <small>pendientes 2</small> </h1>
+        <h1>
+            TODOApp: {todos.length}
+            <br />
+            <small> Pendientes: {todos.filter(todo => !todo.done).length}</small> 
+        </h1>
         <hr />
         <div className="row">
             <div className="col-7">
