@@ -40,15 +40,11 @@ export const useTodo = () => {
         }
         dispatch(action)
     }
-
-    const todosCount = todos.length
-
-    const pendingTodosCount = todos.filter(todo => !todo.done).length
-  
+ 
     return {
         todos,
-        todosCount,
-        pendingTodosCount,
+        todosCount: todos.length, //Puedes retornar cosas directamente sin hacer funciones
+        pendingTodosCount: todos.filter(todo => !todo.done).length,
         handleDeleteTodo,
         handleNewTodo,
         handleToggleTodo
