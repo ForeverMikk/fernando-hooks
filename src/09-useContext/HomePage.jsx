@@ -2,7 +2,7 @@
 export const HomePage = () => {
   return (
     <>
-    <h1>Main App</h1>
+    <h1>Home Page</h1>
     <hr />
 </>
   )
