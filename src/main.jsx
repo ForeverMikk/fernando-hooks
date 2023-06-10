@@ -1,17 +1,18 @@
 // import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 
 import './index.css'
-// import { MemoHook } from './06-memos/MemoHook';
-// import { CallbackHook } from './06-memos/CallbackHook';
 import './08-useReducer/intro-reducer';
-import { TodoApp } from './08-useReducer/TodoApp';
-// import { Padre } from './07-tarea-memo/Padre';
+
+import { MainApp } from './09-useContext/MainApp';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-    // <CallbackHook />
-    // <Padre />
-    <TodoApp />
+  // <React.StrictMode>  
+  // Higer Order Component HOC
+  <BrowserRouter> 
+    <MainApp />
+  </BrowserRouter>
   // </React.StrictMode>,
 );
