@@ -37,7 +37,7 @@ describe('Pruebas en el useCounter', () => {
 
     test('debe de decrementar el contador', () => { 
         const { result } = renderHook(() => useCounter(100)); 
-        const { decrement } = result.current;
+        const { decrement } = result.current; 
 
         act(() => {
             decrement();
