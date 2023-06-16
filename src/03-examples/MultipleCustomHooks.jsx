@@ -6,6 +6,7 @@ export const MultipleCustomHooks = () => {
   const { counter, increment} = useCounter();
   const { data, isLoading } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${counter}`);
   const { author, quote } = !!data && data[0]; //con el doble signo !! vuelves false el valor del null 
+  
   return (
     <>
         <h1>Braking Bad Cuotes</h1>
