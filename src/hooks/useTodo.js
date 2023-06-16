@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react";
-import { todoReducer } from "../08-useReducer/totoReducer";
+import { todoReducer } from "../08-useReducer/todoReducer";
 
 const init = () => {
     // Esta funcion indica que si el valor del arreglo es null, regresa un arreglo vacio
