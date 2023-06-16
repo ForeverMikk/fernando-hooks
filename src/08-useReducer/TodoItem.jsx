@@ -7,6 +7,7 @@ export const TodoItem = ({todo, onDeleteTodo, onToggleTodo}) => {
         <span
           className={todo.done ? 'text-decoration-line-through' : ''}
           onClick={() => onToggleTodo(todo.id)}
+          aria-label='span'
         >
           {todo.description}
         </span>
@@ -21,7 +22,7 @@ export const TodoItem = ({todo, onDeleteTodo, onToggleTodo}) => {
 }
 
 TodoItem.propTypes = {
-    todo: PropTypes.object,
-    onDeleteTodo: PropTypes.func,
-    onToggleTodo: PropTypes.func
+    todo: PropTypes.object.isRequired,
+    onDeleteTodo: PropTypes.func.isRequired,
+    onToggleTodo: PropTypes.func.isRequired
 }
